@@ -6,7 +6,7 @@ This project demonstrates a fully serverless web application deployed on AWS, le
 ### 🔗 Useful Links
 - [GitHub Repository](<[INSERT_GITHUB_LINK_HERE](https://github.com/Pratik-Khose/Serverless-Web-App-Over-AWS)>)
 - [Project Documentation](<https://pratikkhose.medium.com/building-deploying-serverless-web-application-over-aws-cloud-part-01-2c5944a4f722>)
-- [YouTube Demo](<https://www.youtube.com/watch?v=caG6TiKph3M&t=291s>)
+- [![Watch the demo](https://img.youtube.com/vi/caG6TiKph3M/maxresdefault.jpg)](https://www.youtube.com/watch?v=caG6TiKph3M&t=291s)
 
 ---
 
