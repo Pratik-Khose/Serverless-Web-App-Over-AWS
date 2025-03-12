@@ -1,47 +1,96 @@
-## Serverless Web Application Workshop
+# Serverless Web Application Deployment on AWS
 
-In this workshop you'll deploy a simple web application that enables users to request unicorn rides from the [Wild Rydes][wildrydes] fleet. The application will present users with an HTML based user interface for indicating the location where they would like to be picked up and will interface on the backend with a RESTful web service to submit the request and dispatch a nearby unicorn. The application will also provide facilities for users to register with the service and log in before requesting rides.
+## 🚀 Project Overview
+This project demonstrates a fully serverless web application deployed on AWS, leveraging services such as AWS Lambda, API Gateway, Amazon S3, and DynamoDB to deliver a scalable and cost-effective solution.
 
-The application architecture uses [AWS Lambda][lambda], [Amazon API Gateway][api-gw], [Amazon S3][s3], [Amazon DynamoDB][dynamodb], [Amazon Cognito][cognito], and [AWS Amplify Console][amplify-console]. Amplify Console hosts static web resources including HTML, CSS, JavaScript, and image files which are loaded in the user's browser via S3. JavaScript executed in the browser sends and receives data from a public backend API built using Lambda and API Gateway. Amazon Cognito provides user management and authentication functions to secure the backend API. Finally, DynamoDB provides a  persistence layer where data can be stored by the API's Lambda function.
+### 🔗 Useful Links
+- [GitHub Repository](<[INSERT_GITHUB_LINK_HERE](https://github.com/Pratik-Khose/Serverless-Web-App-Over-AWS)>)
+- [Project Documentation](<https://pratikkhose.medium.com/building-deploying-serverless-web-application-over-aws-cloud-part-01-2c5944a4f722>)
+- [YouTube Demo](<https://www.youtube.com/watch?v=caG6TiKph3M&t=291s>)
 
-See the diagram below for a depiction of the complete architecture.
+---
 
-![Wild Rydes Web Application Architecture](images/wildrydes-complete-architecture.png)
+## 📋 Features
+- ✅ Fully serverless architecture using AWS Lambda and API Gateway  
+- ✅ Static website hosting via Amazon S3  
+- ✅ Data storage with Amazon DynamoDB  
+- ✅ Automated deployment using AWS SAM/CloudFormation  
+- ✅ CI/CD pipeline with AWS CodePipeline  
+- ✅ Secure authentication and authorization with AWS Cognito  
 
-### Modules
+---
 
-This workshop is divided into four modules. Each module describes a scenario of
-what we're going to build and step-by-step directions to help you implement the
-architecture and verify your work.
+## 🛠️ Architecture Diagram
+![Architecture Diagram](<INSERT_ARCHITECTURE_IMAGE_LINK_HERE>)
 
-| Module | Description |
-| ---------------- | -------------------------------------------------------- |
-| [Static Web hosting][static-web-hosting] | Deploy the static website using AWS Amplify Console by first creating a git repository (in either CodeCommit or GitHub) and then pushing the site code. |
-| [User Management][user-management] | Configure user management for the website using Amazon Cognito. |
-| [Serverless Backend][serverless-backend] | Create an AWS Lambda function that will persist data to an Amazon DynamoDB table. |
-| [RESTful APIs][restful-apis] | Expose the Lambda function via an Amazon API Gateway as a RESTful API that the static site can call. |
+---
 
-:warning: These modules are intended to be executed linearly.
+## ⚙️ Prerequisites
+- AWS Account with necessary permissions
+- Node.js and npm/yarn installed
+- AWS CLI configured with your credentials
+- AWS SAM CLI for deployment
 
-After you have completed the workshop you can delete all of the resources that were created by following the [cleanup guide][cleanup].
+---
 
-### Next
+## 📦 Installation and Setup
+1. **Clone the repository**
+```bash
+git clone <INSERT_GITHUB_LINK_HERE>
+cd <PROJECT_FOLDER>
+```
 
-:white_check_mark: Review and follow the directions in the [setup guide][setup],
-wherein you'll configure your AWS Cloud9 IDE and setup pre-requisites like an
-AWS Account.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-[wildrydes]: http://wildrydes.com/
-[unicorns]: http://www.wildrydes.com/unicorns.html
-[amplify-console]: https://aws.amazon.com/amplify/console/
-[cognito]: https://aws.amazon.com/cognito/
-[lambda]: https://aws.amazon.com/lambda/
-[api-gw]: https://aws.amazon.com/api-gateway/
-[s3]: https://aws.amazon.com/s3/
-[dynamodb]: https://aws.amazon.com/dynamodb/
-[setup]: 0_Setup/
-[static-web-hosting]: 1_StaticWebHosting/
-[user-management]: 2_UserManagement/
-[serverless-backend]: 3_ServerlessBackend/
-[restful-apis]: 4_RESTfulAPIs/
-[cleanup]: 9_CleanUp/
+3. **Configure AWS resources**
+- Create an S3 bucket for static website hosting
+- Set up Lambda functions, API Gateway, and DynamoDB using AWS SAM/CloudFormation
+
+4. **Deploy the application**
+```bash
+sam build
+sam deploy --guided
+```
+
+5. **Access the application**
+- Visit the API Gateway endpoint for the backend
+- Access the static website hosted on S3
+
+---
+
+## 🧪 Testing
+- Use **Postman** or **curl** to test API endpoints.
+- For front-end testing, ensure S3 bucket permissions allow public read access.
+
+---
+
+## 📈 Monitoring and Logging
+- AWS CloudWatch is configured for detailed logs and metrics.
+- Use CloudWatch dashboards for performance insights.
+
+---
+
+## 🛡️ Security Best Practices
+- Use IAM roles with minimal permissions.
+- Enable encryption for data in transit and at rest.
+- Set up AWS WAF for added protection.
+
+---
+
+## 🚨 Troubleshooting
+- **S3 Access Denied?** Ensure bucket policies allow public read access.  
+- **Lambda Timeout?** Increase the function timeout in AWS Console.  
+- **API Gateway Errors?** Verify endpoint routes and permissions.
+
+---
+
+## 🙌 Contributing
+Contributions are welcome! Feel free to submit pull requests or open issues for improvements.
+
+---
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
