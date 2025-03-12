@@ -21,7 +21,7 @@ This project demonstrates a fully serverless web application deployed on AWS, le
 ---
 
 ## 🛠️ Architecture Diagram
-![Architecture Diagram](<INSERT_ARCHITECTURE_IMAGE_LINK_HERE>)
+![Architecture Diagram](<Serverless_Architecture.d930970c77b382db6e0395198aacccd8a27fefb7.png>)
 
 ---
 
@@ -62,7 +62,6 @@ sam deploy --guided
 ---
 
 ## 🧪 Testing
-- Use **Postman** or **curl** to test API endpoints.
 - For front-end testing, ensure S3 bucket permissions allow public read access.
 
 ---
@@ -91,6 +90,3 @@ sam deploy --guided
 Contributions are welcome! Feel free to submit pull requests or open issues for improvements.
 
 ---
-
-## 📄 License
-This project is licensed under the [MIT License](LICENSE).
