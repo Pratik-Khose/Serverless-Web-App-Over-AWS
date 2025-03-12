@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildRyde</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap');
+    
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: 0.2s ease-in-out;
+    color: #000;
+    text-decoration: none;
+}
+
+::selection{
+    background-color: var(--Soft-Red);
+    color: #fff;
+}
+
+
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--Soft-Blue);
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.heading{
+    text-align: center;
+    font-size: 2rem;
+    color: var(--Very-Dark-Blue);
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+
+.heading h1{
+    padding-bottom: 2rem;
+}
+
+
+.heading p{
+    max-width: 60rem;
+    margin: auto;
+    color: var(--Grayish-Blue);
+    font-size: 1.7rem;
+}
+
+
+.all-btn{
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    background-color: var(--Soft-Blue);
+    border-radius: .5rem;
+    color: #fff;
+}
+
+.all-btn:hover{
+    background-color: transparent;
+    color: var(--Soft-Blue);
+    border: 2px solid var(--Soft-Blue);
+}
+
+
+:root{
+    --Soft-Blue: hsl(231, 69%, 60%);
+    --Soft-Red: hsl(0, 94%, 66%);
+    --Grayish-Blue: hsl(229, 8%, 60%);
+    --Very-Dark-Blue: hsl(229, 31%, 21%);
+    --box-shadow: .5rem .5rem  0 hsl(231, 69%, 60%);
+    --text-shadow: .4rem .4rem  0 rgba(0, 0, 0, .2);
+    --border: .2rem  solid var(--green);
+}
+
+
+/* navbar sections starts */
+.header{
+    padding: 3rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    left: 0;
+    z-index: 10000;
+    background-color: #fff;
+    box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+
+.header .logo{
+    cursor: pointer;
+}
+
+
+.header .navbar a{
+    margin-left: 2rem;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+
+
+.header .navbar a:hover{
+    color: var(--Soft-Red);
+}
+
+
+.header .navbar .btn{
+    padding: .6rem 3rem;
+    background-color: var(--Soft-Red);
+    color: #fff;
+    border-radius: .5rem;
+}
+
+.header .navbar .btn:hover{
+    color: var(--Soft-Red);
+    background-color: transparent;
+    border: 2px solid var(--Soft-Red);
+}
+
+#menu-btn{
+    padding: 1rem 1rem;
+    background-color: #eee;
+    font-size: 3rem;
+    color: var(--Soft-Blue);
+    border-radius: .5rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+/* Media Queries */
+
+
+
+
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+    
+}
+
+@media (max-width: 768px){
+    #menu-btn{
+        display: initial;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 115%;
+        right: 2rem;
+        box-shadow: var(--box-shadow);
+        width: 33rem;
+        border-radius: .5rem;
+        border: 2px solid var(--Soft-Blue);
+        background-color: #fff;
+        transform: scale(0);
+        transform-origin: top right;
+    }
+
+    .header .navbar.active{
+        transform: scale(1);
+    }
+
+    .header .navbar a{
+        margin: 2.5rem;
+        text-align: center;
+        display: block;
+        font-size: 2rem;
+    }
+}
+
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+}
+/* navbar sections ends */
+
+
+/* home section starts  */
+
+.home{
+    padding-top: 15rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* main property for responsiveness */
+    gap: 1.5rem;
+}
+
+
+.home .image{
+    flex: 1 1 45rem;
+}
+
+
+.home .image img{
+    width: 100%;
+    margin-top: 5rem;
+}
+
+
+.home .content{
+    flex: 1 1 45rem;
+}
+
+
+.home .content h1{
+    font-size: 4.5rem;
+    padding-block-end: 1rem 0;
+    color: var(--Very-Dark-Blue);
+}
+
+.home .content p{
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    max-width: 40rem;
+    color: var(--Grayish-Blue);
+    padding-bottom: 4rem;
+}
+
+.home .content .home-btn{
+    margin-right: 15px;
+    padding: 1.3rem 2rem;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.4rem;
+    box-shadow: .5rem .5rem hsl(231, 69%, 60%);
+    border: 2px solid var(--Soft-Blue);
+    border-radius: .5rem;
+}
+
+
+.home .content .home-btn:hover{
+    background-color: var(--Soft-Blue);
+    box-shadow: none;
+    color: #fff;
+}
+
+
+
+
+/* home section ends */
+
+
+
+/* features section starts  */
+
+.features .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin: 3rem 0;
+}
+
+.features .row .image{
+    flex: 1 1 45rem;
+}
+
+
+.features .row .image img{
+    width: 100%;
+}
+
+
+
+.features .row .content{
+    flex: 1 1 45rem;
+}
+
+
+.features .row .content h1{
+    font-size: 4rem;
+    padding: 1rem 0;
+    color: var(--Very-Dark-Blue);
+}
+
+
+.features .row .content p{
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    color: var(--Grayish-Blue);
+    padding-bottom: 4rem;
+}
+/* features section ends */
+
+
+/* downloads section starts  */
+
+.download .box-container{
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.download .box{
+    border: 2px solid var(--Soft-Blue);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    text-align: center;
+    padding: 2.5rem;
+}
+.download .box:hover{
+    border: 2px solid var(--Soft-Blue);
+    box-shadow: none;
+}
+
+
+.download .box h3{
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: var(--Very-Dark-Blue);
+}
+
+
+
+.download .box p{
+    font-size: 1.7rem;
+    padding-bottom: 2.5rem;
+    color: var(--Grayish-Blue);
+}
+
+/* downloads section ends */
+
+
+
+/* footer section starts */
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap:2rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color:var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color:var(--green);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right:1rem;
+}
+
+
+.footer .credit{
+    padding: 1rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #000;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+}
+
+
+.footer .credit span{
+    color: var(--Soft-Red);
+    cursor: pointer;
+}
+
+
+/* footer section ends */
+    </style>
+</head>
+
+<body>
+    <!-- navbar sections starts  -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/wr-logo-black.png" alt="logo-bookmark">
+        </div>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#download">Services</a>
+            <a href="#footer">Contact</a>
+            <!-- <a href="#" class="btn">Log in</a> -->
+        </nav>
+
+
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </header>
+    <!-- navbar sections starts  -->
+
+   
+    <!-- home section stars  -->
+
+    <section class="home" id="home">
+        <div class="content">
+            <h1>Travel on you Tips</h1>
+            <p>Ride with Confidence, Anytime, Anywhere!
+                Quick Booking enter your pickup location and drop-off. Time to get started!!!</p>
+            <a href="register.html" class="home-btn">Register Here</a>
+<gap></gap>
+            <a href="signin.html" class="home-btn">Login  Here</a>
+        </div>
+
+
+        <div class="image">
+            <img src="images/illustration-hero.jpg" alt="illustration-hero">
+        </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- features sectin starts  -->
+
+    <section class="features" id="features">
+        <div class="heading">
+            <h1>Features</h1>
+            <p>Our aim is to make it quick and easy for you to access our taxi at anytime and anywhee. </p>
+        </div>
+
+
+        <div class="row">
+            <!-- 1 Tab  -->
+            <div class="image">
+                <img src="images/illustration-features-tab-1.jpg" alt="illustration-features-tab-1">
+            </div>
+
+
+            <div class="content">
+                <h1>Quality premium taxis</h1>
+                <p>Our fleet comprises meticulously maintained vehicles that redefine luxury on wheels. From sleek sedans to spacious SUVs, each ride is a testament to elegance and style.</p>
+                <a href="#" class="all-btn">more info</a>
+            </div>
+
+            <!-- 1 Tab  -->
+
+            <!-- 2 Tab  -->
+            <div class="content">
+                <h1>Good and Comfortable Interior</h1>
+                <p>Your safety is our top priority. Rest assured, all our vehicles undergo rigorous safety checks, and our chauffeurs are trained to prioritize your well-being at all times.</p>
+                <a href="#" class="all-btn">more info</a>
+            </div>
+
+            <div class="image">
+                <img src="images/illustration-features-tab-2.jpg" alt="illustration-features-tab-2">
+            </div>
+
+            <!-- 2 Tab  -->
+
+            <div class="image">
+                <img src="images/illustration-features-tab-3.jpg" alt="illustration-features-tab-3">
+            </div>
+
+            <div class="content">
+                <h1>Pleasent experience</h1>
+                <p> Whether it's a business meeting, airport transfer, or a night out on the town, we tailor our services to meet your needs. Expect nothing less than personalized attention to detail from start to finish.</p>
+                <a href="#" class="all-btn">more info</a>
+            </div>
+
+
+            <!-- 3 Tab  -->
+
+        </div>
+    </section>
+
+
+    <!-- features sectin ends -->
+
+
+    <!-- downloads section starts  -->
+
+    <section class="download" id="download">
+        <div class="heading">
+            <h1>Services</h1>
+            <p>Ready to experience the epitome of luxury travel? Book your next ride with LuxRide and discover the difference firsthand.</p>
+        </div>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="images/logo-chrome.png" alt="logo-chrome">
+
+                <h3>On time</h3>
+                <p>Arrive in Style, Every Time , Every Where</p>
+                <a href="signin.html" class="all-btn">Book Now</a>
+            </div>
+
+            <div class="box">
+                <img src="images/logo-firefox.png" alt="logo-firefox">
+
+                <h3>Well maintained</h3>
+                <p>Travel in Elegance, Perfected to Precision</p>
+                <a href="#" class="all-btn">Enquiry</a>
+            </div>
+
+            <div class="box">
+                <img src="images/logo-opera.png" alt="logo-opera">
+
+                <h3>Customer support</h3>
+                <p>Reliability Redefined, Support Beyond Expectations</p>
+                <a href="#" class="all-btn">Book a call</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- downloads section ends -->
+
+
+
+    <!-- footer section starts  -->
+
+   <section class="footer" id="footer">
+       <div class="box-container">
+           <div class="box">
+               <h3>quick links</h3>
+               <a href="#"><i class="fas fa-chevron-right"></i>home</a>
+               <a href="#"><i class="fas fa-chevron-right"></i>features</a>
+               <a href="#"><i class="fas fa-chevron-right"></i>contact</a>
+            </div>
+            
+            
+            <div class="box">
+                <h3>our services</h3>
+                <a href="#"><i class="fas fa-chevron-right"></i>Instant taxi</a>
+                <a href="#"><i class="fas fa-chevron-right"></i>Customer support</a>
+               
+           </div>
+
+           <div class="box">
+               <h3>contact info</h3>
+               <a href="#"><i class="fas fa-phone"></i>+111-222-3333</a>
+               <a href="#"><i class="fas fa-envelope"></i>wildrydes@gmail.com</a>
+               <a href="#"><i class="fas fa-map-marker-alt"></i>Mumbai, India - 12345</a>
+           </div>
+
+           <div class="box">
+               <h3>follow us</h3>
+               <a href="#"><i class="fab fa-facebook-f"></i>facebook</a>
+               <a href="#"><i class="fab fa-twitter"></i>twitter</a>
+               <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+               <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+           </div>
+       </div>
+
+
+       <div class="credit">created by
+           <a href="" target="_blank"><span>Team</span> | all rights reserved</a>
+       </div>
+   </section>
+
+    <!-- footer section ends -->
+
+
+    <script>
+    let menu = document.querySelector("#menu-btn")
+        let navbar = document.querySelector(".navbar")
+        
+        
+        menu.onclick = () =>{
+            menu.classList.toggle("fa-times")
+            navbar.classList.toggle("active")
+        }
+        
+        
+        window.onscroll = () =>{
+            menu.classList.remove("fa-times")
+            navbar.classList.remove("active")
+        }
+        </script>
+</body>
+
+</html>
